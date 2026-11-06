@@ -62,7 +62,7 @@ void AudioTask(void *pvParameters) {
                 int16_t* pcmData = (int16_t*)playBuffer;
                 int samples = readBytes / 2;
                 for (int i = 0; i < samples; i++) {
-                  int32_t amplified = pcmData[i] * 3.0; 
+                  int32_t amplified = pcmData[i] * 1.0; 
                   if (amplified > 32767) amplified = 32767;
                   if (amplified < -32768) amplified = -32768;
                   pcmData[i] = (int16_t)amplified;
